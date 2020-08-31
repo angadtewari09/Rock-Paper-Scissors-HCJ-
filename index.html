@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600&display=swap" rel="stylesheet">
+    <title>Rock, Paper and Scissors!</title>
+</head>
+<body>
+   
+    <div class = "outer">
+        <div class="content">
+            <h1>Welcome guys!</h1>
+            <br>
+            <h2 class = "sly">Let's play rock paper scissors</h2>
+        </div>
+        <div id = "iconify">
+            <img class = "hand" src="rock.png">
+            <img class = "hand" src="paper.png">
+            <img class = "hand" src="scissors.png">
+        </div>
+        <button class = "button" id="butt">Play Now!</button>
+        <br>
+    </div>
+
+
+    <div class="container" id = "contain">
+        <h3 class = "sub heading"></h3>
+        <div class = "score-board">
+            <div id="player-card" class="card">Player</div>
+            <div id="system-card" class="card">System</div>
+            <span id="player-score">0</span>:<span id="computer-score">0</span>
+        </div>
+        <!--Main game starts here-->
+        <br>
+        <br> 
+        <div class = "game">
+            <p class = "choose">Choose an option!</p>
+            <h6 id = "start"></h6>
+            <div class ="icons">
+                <div  class="player-hand"><img id="phand" class="hand" id="action" src="rock.png"></div>
+                <div  class="computer-hand"><img id = "chand" class = "hand" id="action" src="rock.png"></div>
+            </div>
+            <div class = "options">
+                <button id = "first" class = "form-control submit">Rock</button>
+                <button id = "second" class = "form-control submit">Paper</button>
+                <button id = "third" class = "form-control submit">Scissors</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src = "script.js" type="text/javascript"></script>
+</body>
+</html>
