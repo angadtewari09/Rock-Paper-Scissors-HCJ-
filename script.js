@@ -16,6 +16,17 @@ $(document).ready(function(){
     });
 });
 
+const mdlbtn = document.getElementById("modal-button");
+var modalback = document.querySelector(".modal-back");
+mdlbtn.addEventListener('click' , function() {
+    location.reload();
+});
+
+const closebtn = document.getElementById("close");
+closebtn.addEventListener('click' , function() {
+    modalback.classList.remove("modal-active");
+});
+
 function gameplay() {
     let playscore = 0;
     let compscore = 0;
@@ -26,7 +37,7 @@ function gameplay() {
     var playeroption = "" ;
         rock_div.addEventListener('click' , function(){
             playeroption = "rock";
-            var element = document.getElementsById("phand");
+            var element = document.getElementById("phand");
             element.classList.add("jering");
         });
         paper_div.addEventListener('click' , function(){
@@ -73,9 +84,10 @@ function gameplay() {
         
     });
 });
+    
     function winner(playerchoice , rand) {
         
-    
+
         const start = document.getElementById("start");
         if(playerchoice === rand ){
             start.innerHTML = "It's a tie!";
@@ -129,18 +141,21 @@ function gameplay() {
                 return ;
             }
         }
-        
+        message(playscore , compscore);
+    }
+    function message(playscore , compscore) {
+        var modalback = document.querySelector(".modal-back");
+        if( playscore === 5 ) {
+            document.getElementById("message").innerHTML = "Player";
+            console.log("hello");
+            modalback.classList.add("modal-active");
+       }
+    
+       if( compscore === 5 ) {
+        document.getElementById("message").innerHTML = "Computer";
+            modalback.classList.add("modal-active");
+            console.log("world");
+        }
     }
 }
 gameplay()
-
-function score() {
-   if( document.getElementById("player-score") === 10 ) {
-        exit;
-   }
-
-   if( document.getElementById("computer-score") === 10 ) {
-        exit;
-}
-}
-score()
