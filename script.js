@@ -3,7 +3,8 @@
         $(".outer").hide();
         $(".container").show();
     });*/
-
+    
+//The content div is only visible.
 $(document).ready(function(){
     $(".container").hide(); 
 }); 
@@ -64,7 +65,7 @@ function gameplay() {
             console.log('computer chooses: ' + rand + '.');
             /*call function*/
 
-            /*console tobe ddeleted afterwards*/
+            /*console tobe deleted afterwards*/
             console.log('player chooses:' + playeroption + '.');
             playerhand.style.animation = "jerking 2s ease";
             computerhand.style.animation = "jerking 2s ease"; 
@@ -77,9 +78,6 @@ function gameplay() {
             /*update the hands*/
             playerhand.src = `${playeroption}.png`;
             computerhand.src = `${rand}.png`;
-
-           
-
         } , 2000);
         
     });
@@ -91,7 +89,7 @@ function gameplay() {
         const start = document.getElementById("start");
         if(playerchoice === rand ){
             start.innerHTML = "It's a tie!";
-            return;
+            /*return;*/
         }
         if( playerchoice === 'rock') {
             if(rand === 'scissors') {
@@ -99,14 +97,14 @@ function gameplay() {
                 playscore = playscore + 1;
                 document.getElementById("player-score").innerHTML = playscore;
                 document.getElementById("computer-score").innerHTML = compscore;
-                return;
+                /*return;*/
             }
             else {
                 start.innerHTML = 'Computer wins';
                 compscore = compscore + 1;
                 document.getElementById("player-score").innerHTML = playscore;
                 document.getElementById("computer-score").innerHTML = compscore;
-                return;
+                /*return;*/
             }
         }
         if( playerchoice === 'paper') {
@@ -115,14 +113,14 @@ function gameplay() {
                 playscore = playscore + 1;
                 document.getElementById("player-score").innerHTML = playscore;
                 document.getElementById("computer-score").innerHTML = compscore;
-                return;
+                /*return;*/
             }
             else {
                 start.innerHTML = 'Computer wins!';
                 compscore = compscore + 1;
                 document.getElementById("player-score").innerHTML = playscore;
                 document.getElementById("computer-score").innerHTML = compscore;
-                return;
+                /*return;*/
             }
         }
         if( playerchoice === 'scissors') {
@@ -131,18 +129,19 @@ function gameplay() {
                 playscore = playscore + 1;
                 document.getElementById("player-score").innerHTML = playscore;
                 document.getElementById("computer-score").innerHTML = compscore;
-                return;
+                /*return;*/
             }
             else {
                 start.innerHTML = 'Computer wins!';
                 compscore = compscore + 1;
                 document.getElementById("player-score").innerHTML = playscore;
                 document.getElementById("computer-score").innerHTML = compscore;
-                return ;
+                /*return;*/
             }
         }
         message(playscore , compscore);
     }
+    //this function not running.
     function message(playscore , compscore) {
         var modalback = document.querySelector(".modal-back");
         if( playscore === 5 ) {
