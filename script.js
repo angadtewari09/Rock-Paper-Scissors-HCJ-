@@ -3,7 +3,8 @@
         $(".outer").hide();
         $(".container").show();
     });*/
-    
+
+//Using JQuery.    
 //The content div is only visible.
 $(document).ready(function(){
     $(".container").hide(); 
@@ -82,7 +83,8 @@ function gameplay() {
         
     });
 });
-    
+
+    //this function keeps the count of the scores of teh system and the player.
     function winner(playerchoice , rand) {
         
 
@@ -99,7 +101,7 @@ function gameplay() {
                 document.getElementById("computer-score").innerHTML = compscore;
                 /*return;*/
             }
-            else {
+            else if(rand === 'paper'){
                 start.innerHTML = 'Computer wins';
                 compscore = compscore + 1;
                 document.getElementById("player-score").innerHTML = playscore;
@@ -115,7 +117,7 @@ function gameplay() {
                 document.getElementById("computer-score").innerHTML = compscore;
                 /*return;*/
             }
-            else {
+            else if( rand === 'scissors') {
                 start.innerHTML = 'Computer wins!';
                 compscore = compscore + 1;
                 document.getElementById("player-score").innerHTML = playscore;
@@ -131,7 +133,7 @@ function gameplay() {
                 document.getElementById("computer-score").innerHTML = compscore;
                 /*return;*/
             }
-            else {
+            else if( rand === 'rock' ){
                 start.innerHTML = 'Computer wins!';
                 compscore = compscore + 1;
                 document.getElementById("player-score").innerHTML = playscore;
@@ -141,19 +143,20 @@ function gameplay() {
         }
         message(playscore , compscore);
     }
-    //this function not running.
+    //NOTE: Here the return statement is not used because it will carry the compiler out of the function without executing the remaining portion of the code.
+
+    //This is the function used to return a modal that pops up if either of the two win the game.
     function message(playscore , compscore) {
         var modalback = document.querySelector(".modal-back");
+        //Displays the message when the player wins the game    
         if( playscore === 5 ) {
             document.getElementById("message").innerHTML = "Player";
-            console.log("hello");
             modalback.classList.add("modal-active");
        }
-    
+       //Displays the message when the computer wins.
        if( compscore === 5 ) {
         document.getElementById("message").innerHTML = "Computer";
             modalback.classList.add("modal-active");
-            console.log("world");
         }
     }
 }
