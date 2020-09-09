@@ -13,8 +13,8 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#butt").click(function(){
-      $(".outer").hide();
-      $(".container").show();
+      $(".outer").fadeOut(400);
+      $(".container").fadeIn(2000);
     });
 });
 
