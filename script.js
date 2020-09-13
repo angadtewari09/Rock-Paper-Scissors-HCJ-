@@ -25,10 +25,6 @@ mdlbtn.addEventListener('click' , function() {
     location.reload();
 });
 
-const closebtn = document.getElementById("close");
-closebtn.addEventListener('click' , function() {
-    modalback.classList.remove("modal-active");
-});
 
 function gameplay() {
     let max = 0;
@@ -150,6 +146,7 @@ function gameplay() {
         but1.addEventListener('click' , function() {
             document.getElementById("butt").style.display = "block";
             document.querySelector(".button").style.animation = "iamfaded 0.5s ease";
+            document.querySelector(".pointbtn").style.animation = "fadeout 0.5s ease";
             document.querySelector(".pointbtn").style.display = "none";
             max = 3;
             console.log(max);
@@ -157,6 +154,7 @@ function gameplay() {
         but2.addEventListener('click' , function() {
             document.querySelector(".pointbtn").style.display = "none";
             document.querySelector(".button").style.animation = "iamfaded 0.5s ease";
+            document.querySelector(".pointbtn").style.animation = "fadeout 0.5s ease";
             document.getElementById("butt").style.display = "block";
             max = 5;
             console.log(max);
@@ -164,6 +162,7 @@ function gameplay() {
         but3.addEventListener('click' , function() {
            document.querySelector(".pointbtn").style.display = "none";
            document.querySelector(".button").style.animation = "iamfaded 0.5s ease";
+           document.querySelector(".pointbtn").style.animation = "fadeout 0.5s ease";
            document.getElementById("butt").style.display = "block";
             max = 10;
             console.log(max);
@@ -175,12 +174,12 @@ function gameplay() {
         scoreselector();
         var modalback = document.querySelector(".modal-back");
         //Displays the message when the player wins the game    
-        if( playscore === 5 ) {
+        if( playscore === max ) {
             document.getElementById("message").innerHTML = "Player";
             modalback.classList.add("modal-active");
        }
        //Displays the message when the computer wins.
-       if( compscore === 5 ) {
+       if( compscore === max ) {
         document.getElementById("message").innerHTML = "Computer";
             modalback.classList.add("modal-active");
         }
