@@ -18,6 +18,7 @@ $(document).ready(function(){
     });
 });
 
+
 const mdlbtn = document.getElementById("modal-button");
 var modalback = document.querySelector(".modal-back");
 mdlbtn.addEventListener('click' , function() {
@@ -30,6 +31,7 @@ closebtn.addEventListener('click' , function() {
 });
 
 function gameplay() {
+    let max = 0;
     let playscore = 0;
     let compscore = 0;
     /*Player choice*/
@@ -144,9 +146,33 @@ function gameplay() {
         message(playscore , compscore);
     }
     //NOTE: Here the return statement is not used because it will carry the compiler out of the function without executing the remaining portion of the code.
-
+    function scoreselector() {
+        but1.addEventListener('click' , function() {
+            document.getElementById("butt").style.display = "block";
+            document.querySelector(".button").style.animation = "iamfaded 0.5s ease";
+            document.querySelector(".pointbtn").style.display = "none";
+            max = 3;
+            console.log(max);
+        });
+        but2.addEventListener('click' , function() {
+            document.querySelector(".pointbtn").style.display = "none";
+            document.querySelector(".button").style.animation = "iamfaded 0.5s ease";
+            document.getElementById("butt").style.display = "block";
+            max = 5;
+            console.log(max);
+        });
+        but3.addEventListener('click' , function() {
+           document.querySelector(".pointbtn").style.display = "none";
+           document.querySelector(".button").style.animation = "iamfaded 0.5s ease";
+           document.getElementById("butt").style.display = "block";
+            max = 10;
+            console.log(max);
+        });
+    }
+    scoreselector();
     //This is the function used to return a modal that pops up if either of the two win the game.
     function message(playscore , compscore) {
+        scoreselector();
         var modalback = document.querySelector(".modal-back");
         //Displays the message when the player wins the game    
         if( playscore === 5 ) {
