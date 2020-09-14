@@ -10,7 +10,9 @@ body {
     transition: ease-in 0.3s;
 }
 .content h1 {
-    font-size:60px;
+    font-family: 'Bangers', cursive;
+    font-size:80px;
+    letter-spacing: 5px;
 }
 
 .outer .content h2 {
@@ -22,7 +24,11 @@ body {
     color:#fff;
     margin-top:70px;
     width:200px;
-    background: orangered;
+    background:  tomato;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 10px 9px rgba(0, 0, 0 ,0.5);
     font-weight: 900;
     height:60px;
     font-size:20px;
@@ -33,6 +39,7 @@ body {
     transition: 0.5s all ease;
     cursor: pointer;
 }
+
 .button span {
   cursor: pointer;
   display: inline-block;
@@ -70,13 +77,14 @@ body {
     border: solid 3px whitesmoke;
     border-radius:50%;
     padding:4px;
-    margin:10px;    
+    margin:10px; 
+    box-shadow: 10px 9px rgba(0, 0, 0 ,0.3);
 } 
 
 /*.icons .hand:hover {
     transform: scale(1.1);
     transition:ease-in-out 0.4s;
-} */
+} 
 /*second part of the page*/
 
 
@@ -209,8 +217,11 @@ body {
     background-color: orange;
     color:#fff;
     font-weight: bolder;
-    box-shadow: none;
     border: none;
+}
+.form-control:hover {
+    transition: 0.5s ease-in-out all ;
+    box-shadow: 5px 5px rgba(0, 0, 0 ,0.3);
 }
 #start {
     margin-top:-10px;
@@ -285,8 +296,35 @@ header {
     color:#fff;
     font-family: 'Asap' , sans-serif;
     cursor:pointer;
-    border:none;
+    font-size:20px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
 }
+#modal-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.refresh {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+    
+    }
+    
+    
+
 .modal-active {
     visibility: visible;
     opacity:1;
@@ -297,6 +335,7 @@ header {
 @media(max-width:440px) {
     .content h1 {
         font-size: 50px;
+        
     }
 }   
 @media(max-width:424px) {
@@ -307,16 +346,13 @@ header {
 }   
 /*points button*/
 .pointbtn {
-    left:auto;
-    right: auto;
+    margin-top:25px;
     display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-top:50px;
-    width:550px;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
 }
+
 .btn {
     font-weight: bolder;
     color: white;
